@@ -5,7 +5,7 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 
 import { getDatabase, ref, onValue, remove } from "firebase/database"; //리엑트연동
 
-function Post({ image, notice, timestamp, quoraUser, Id }) {
+function Post({ image, notice, timestamp, quoraUser, Id, Ttitle }) {
   const onDeleteClick = async () => {
     const ok = window.confirm("해당 공지사항을 삭제하시겠습니까?");
     console.log(ok);
@@ -25,6 +25,8 @@ function Post({ image, notice, timestamp, quoraUser, Id }) {
 
       <div className="post_body">
         <div className="post_answer">
+          <h3> {"<"} {Ttitle} {">"}</h3> 
+          <p>ㅤㅤㅤㅤ</p>
           <p> {notice} </p>
         </div>
         <img src={image} alt="" />

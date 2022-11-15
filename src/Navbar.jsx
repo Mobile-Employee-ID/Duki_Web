@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/UserSlice";
 import { auth } from "./firebase"; //로그아웃에 사용
 import Modal from "react-modal";
-import { Input } from "@mui/material";
+import { getInputLabelUtilityClasses, Input } from "@mui/material";
 import { Link } from "react-router-dom";
 import { getDatabase, ref, child, push, update } from "firebase/database"; //리얼타임사용
 
@@ -20,6 +20,7 @@ function Navbar() {
   const [openModal, setOpenModal] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
+  const [inputTitle, setinputTitle] = useState("");
 
   const handlenotice = (e) => {
     e.preventDefault();
@@ -28,11 +29,12 @@ function Navbar() {
 
     const postData = {
       //데이터 구조생성
+      
       contents: input,
       imageUrl: inputUrl,
       createdAt: { ".sv": "timestamp" }, //타임 스탬프 사용
       noticeId: user.uid, //유저식별자
-      title: "제목",
+      title: inputTitle,
     };
 
     const newPostKey = push(child(ref(db2), "Articles")).key; //포스트 할때 사용할 키값 생성
@@ -40,6 +42,7 @@ function Navbar() {
     updates["/Articles/" + newPostKey] = postData; //키값으로 상위 구조만들고 데이터를 이후에 집어넣음
     update(ref(db2), updates); //post개시
 
+    setinputTitle("");
     setInput("");
     setInputUrl("");
   };
@@ -115,6 +118,15 @@ function Navbar() {
           <div className="modal_info">
             <Avatar src={user.photo} />
             <p>{user.displayName ? user.displayName : "관리자"}</p>
+          </div>
+          <div className="modal_Field">
+            <Input
+              type="text"
+              placeholder="제목을 작성하세요"
+              required
+              value={inputTitle}
+              onChange={(e) => setinputTitle(e.target.value)}
+            />
           </div>
 
           <div className="modal_Field">

@@ -3,7 +3,7 @@ import { auth } from "./firebase";
 import "./Login.css";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("eco@nomy.com");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
@@ -36,7 +36,7 @@ function Login() {
         <div className="login_auth">
           <div className="login_emailPass">
             <div className="login_inputFields">
-              <div className="login_inputField">
+              <div className="login_inputFieldA">
                 <input
                   type="text"
                   placeholder="이메일"
@@ -48,7 +48,7 @@ function Login() {
               <div className="login_inputField">
                 <input
                   type="password"
-                  placeholder="비밀번호"
+                  placeholder="Code"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />

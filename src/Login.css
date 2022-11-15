@@ -76,6 +76,14 @@
   background-color: rgb(236, 236, 236);
 }
 
+.login_inputFieldA > input {
+  padding: 0px;
+  width: 0%;
+  outline: none;
+  border: none;
+  background-color: rgb(236, 236, 236);
+}
+
 /* 로그인 */
 .login_emailPass > button {
   padding: 9px;

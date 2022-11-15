@@ -45,6 +45,7 @@ function Feed() {
           notice={arr[i].contents}
           timestamp={arr[i].createdAt}
           quoraUser={arr[i].noticeId}
+          Ttitle={arr[i].title}
         />
       );
     }
