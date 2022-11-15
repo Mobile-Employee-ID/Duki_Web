@@ -20,7 +20,7 @@ function Gateuse() {
       const data2 = snapshot.val(); //값을 데이터에 저장함
 
       KeysLength = Object.keys(data2).length;
-      for (var i = 0; i < KeysLength; i++) {
+      for (var i = KeysLength - 1; i >= 0; i--) {
         data.push({
           id: data2[Object.keys(data2)[i]]["id"],
           time: Unix_timestamp(data2[Object.keys(data2)[i]]["time"]),
