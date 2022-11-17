@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import Feed from "./Feed/Feed";
+import Feed from "./Feed";
 
 function Main() {
   return (

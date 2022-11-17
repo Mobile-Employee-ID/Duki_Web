@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/UserSlice";
 import Login from "./Login";
 import { auth } from "./firebase";
-import Receipt from "./Receipt/Receipt";
+import Receipt from "./Receipt";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
-import GateUse from "./GateUse/GateUse";
-import GateAuth from "./GateAuth/GateAuth";
+import GateUse from "./GateUse";
+import GateAuth from "./GateAuth";
 
 function App() {
   const user = useSelector(selectUser);

@@ -11,7 +11,7 @@ function GateAuthBox() {
       </div>
 
       <div className="GateAuthBox_Main">
-        <p>게이트 사용에 대해 승인 할 수 있습니다</p>
+        <p>게이트 사용에 대해 승인을 취소 할 수 있습니다</p>
       </div>
     </div>
   );
