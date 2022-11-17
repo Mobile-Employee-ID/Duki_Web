@@ -3,7 +3,7 @@ import { auth } from "./firebase";
 import "./Login.css";
 
 function Login() {
-  const [email, setEmail] = useState("eco@nomy.com");
+  const [email, setEmail] = useState("aaaa@aaaa.com");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
